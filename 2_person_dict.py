@@ -6,15 +6,15 @@ person["spouse"] = "Edna"
 person["children"] = ["Ralph", "Betty", "Joey"]  # list whithin a dictionary
 person["pets"] = {"dog": "Fido", "cat": "Sox"}  # dictionary within a dictionary
 
-print(person)
+# print(person)
 
 # print out the name of the second child
 
-print(person["children"])
+print(person["children"][1])
 
 # print out the name of the cat
 
-print(person["pets"])
+print(person["pets"]["cat"])
 
 # iterate through all children and print out each child
 
