@@ -31,12 +31,35 @@ print(type(schools))
 print(len(schools))
 
 
+# for school in schools:
+#    if school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
+#        if school["Graduation rate  women (DRVGR2020)"] > 80:
+#            print(f"University Name: {school['instnm']}")
+#            print(
+#                f"Graduation Rate for Women: {school['Graduation rate  women (DRVGR2020)']}"
+#            )
+#            print()
+#            print()
+
+
 for school in schools:
     if school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
-        if school["Graduation rate  women (DRVGR2020)"] > 80:
+        if (
+            school[
+                "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
+            ]
+            is None
+        ):
+            continue
+        elif (
+            school[
+                "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
+            ]
+            > 50000
+        ):
             print(f"University Name: {school['instnm']}")
             print(
-                f"Graduation Rate for Women: {school['Graduation rate  women (DRVGR2020)']}"
+                f"Total price for in-state students living off campus (not with family): {school['Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)']} "
             )
             print()
             print()
